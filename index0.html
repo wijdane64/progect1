@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard RH</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F4F6F7;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .navbar {
+      background-color: #4A90E2; 
+    }
+    .navbar .nav-link, 
+    .navbar .navbar-brand {
+      color: #fff !important;
+      font-weight: 500;
+    }
+    .navbar .nav-link.active {
+      font-weight: 700;
+      border-bottom: 2px solid #fff;
+    }
+    .card {
+      border-radius: 14px;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      background-color: #fff;
+    }
+    .alert-custom {
+      background-color: #F39C12;
+      color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    .quick-actions .card {
+      background-color: #2ECC71;
+      color: #fff;
+      transition: transform 0.2s, background 0.3s;
+    }
+    .quick-actions .card:hover {
+      transform: scale(1.08);
+      background-color: #27AE60;
+    }
+    .card h6 {
+      color: #4A90E2;
+      font-weight: 700;
+    }
+    .highlight {
+      color: #F39C12;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <nav class="navbar navbar-expand-lg px-3">
+    <a class="navbar-brand fw-bold" href="index0.html">Dashboard RH</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-4">
+        <li class="nav-item"><a class="nav-link active" href="index0.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="index01.html">Mes congés</a></li>
+        <li class="nav-item"><a class="nav-link" href="Nouvelle demande de congé.html">Demande de congé</a></li>
+        <li class="nav-item"><a class="nav-link" href="Gestion des congés.html">Administration</a></li>
+      </ul>
+    </div>
+    <div class="d-flex align-items-center ms-auto">
+      <i class="bi bi-bell text-white me-3"></i>
+      <i class="bi bi-person-circle text-white"></i>
+    </div>
+  </nav>
+
+  
+  <div class="container my-4">
+
+    
+    <h4 class="fw-bold text-primary">Tableau de bord</h4>
+    <p class="text-muted">Bienvenue, gérez vos congés et suivez vos demandes</p>
+
+    >
+    <div class="alert-custom d-flex align-items-center mb-4">
+      <i class="bi bi-info-circle me-2"></i>
+      <div>
+        <strong>Fermeture exceptionnelle</strong><br>
+        Les bureaux seront fermés le <span class="highlight">15 mars 2025</span> pour maintenance. 
+        Planifiez vos congés en conséquence.
+      </div>
+    </div>
+
+    
+    <div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h6>Solde de congés</h6>
+          <p>Congés payés <span class="fw-bold text-success">25 jours</span></p>
+          <p>RTT <span class="fw-bold text-warning">8 jours</span></p>
+          <p>Congés maladie <span class="fw-bold text-danger">5 jours</span></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h6>Demandes en cours</h6>
+          <p>En attente <span class="badge bg-warning">2</span></p>
+          <p>Approuvées <span class="badge bg-success">5</span></p>
+          <p>Refusées <span class="badge bg-danger">0</span></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h6>Prochains congés</h6>
+          <p>Congés d'été <br><small class="text-primary">15 - 30 juillet 2025</small></p>
+          <p>Pont de mai <br><small class="text-primary">1 - 2 mai 2025</small></p>
+        </div>
+      </div>
+    </div>
+
+    
+    <h6 class="fw-bold text-primary mb-3">Actions rapides</h6>
+    <div class="row g-3 quick-actions">
+      <div class="col-md-3">
+        <div class="card p-4 text-center">
+          <i class="bi bi-plus-lg fs-2 mb-2"></i>
+          <p class="fw-bold mb-0">Nouvelle demande</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card p-4 text-center">
+          <i class="bi bi-list-task fs-2 mb-2"></i>
+          <p class="fw-bold mb-0">Mes congés</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card p-4 text-center">
+          <i class="bi bi-graph-up fs-2 mb-2"></i>
+          <p class="fw-bold mb-0">Statistiques</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card p-4 text-center">
+          <i class="bi bi-gear fs-2 mb-2"></i>
+          <p class="fw-bold mb-0">Paramètres</p>
+        </div>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration - Dashboard RH</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F4F6F7;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .navbar {
+      background-color: #4A90E2;
+    }
+    .navbar .nav-link, .navbar .navbar-brand {
+      color: #fff !important;
+    }
+    .navbar .nav-link.active {
+      font-weight: 700;
+      border-bottom: 2px solid #fff;
+    }
+    .card {
+      border-radius: 14px;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .status-badge {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .status-approved {
+      background-color: #2ECC71;
+      color: #fff;
+    }
+    .status-pending {
+      background-color: #F39C12;
+      color: #fff;
+    }
+    .status-refused {
+      background-color: #E74C3C;
+      color: #fff;
+    }
+    .btn-approve {
+      background-color: #2ECC71;
+      border: none;
+    }
+    .btn-approve:hover {
+      background-color: #27AE60;
+    }
+    .btn-refuse {
+      background-color: #E74C3C;
+      border: none;
+    }
+    .btn-refuse:hover {
+      background-color: #C0392B;
+    }
+    footer {
+      background: #fff;
+      border-top: 1px solid #ddd;
+      padding: 30px 0;
+      margin-top: 50px;
+      font-size: 0.9rem;
+    }
+    footer h6 {
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #4A90E2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg px-3">
+    <a class="navbar-brand fw-bold" href="Gestion des congés.html">RH Dashboard</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-4">
+        <li class="nav-item"><a class="nav-link" href="index0.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="index01.html">Mes congés</a></li>
+        <li class="nav-item"><a class="nav-link" href="Nouvelle demande de congé.html">Demande de congé</a></li>
+        <li class="nav-item"><a class="nav-link active" href="Gestion des congés.html">Administration</a></li>
+      </ul>
+    </div>
+    <div class="d-flex align-items-center ms-auto">
+      <i class="bi bi-person-circle text-white me-2"></i>
+      <span class="text-white">Admin</span>
+    </div>
+  </nav>
+
+  <!-- Container -->
+  <div class="container my-4">
+
+    <h4 class="fw-bold text-primary">Gestion des congés</h4>
+    <p class="text-muted">Gérez toutes les demandes de congés des employés</p>
+
+    <!-- Statistiques -->
+    <div class="row g-3 mb-4">
+      <div class="col-md-3">
+        <div class="card p-3 text-center">
+          <h6 class="text-muted">En attente</h6>
+          <h4 class="fw-bold text-warning">12</h4>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card p-3 text-center">
+          <h6 class="text-muted">Approuvées</h6>
+          <h4 class="fw-bold text-success">45</h4>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card p-3 text-center">
+          <h6 class="text-muted">Refusées</h6>
+          <h4 class="fw-bold text-danger">3</h4>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card p-3 text-center">
+          <h6 class="text-muted">Total ce mois</h6>
+          <h4 class="fw-bold text-primary">60</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filtres -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <select class="form-select">
+          <option selected>Tous les statuts</option>
+          <option>En attente</option>
+          <option>Approuvé</option>
+          <option>Refusé</option>
+        </select>
+      </div>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary"><i class="bi bi-funnel"></i> Filtrer</button>
+        <button class="btn btn-outline-success"><i class="bi bi-download"></i> Exporter</button>
+      </div>
+    </div>
+
+    <!-- Demandes de congés -->
+    <div class="row g-3">
+      <div class="col-md-3">
+        <div class="card p-3">
+          <h6 class="fw-bold">Marie Dubois</h6>
+          <small class="text-muted">Développeuse</small>
+          <span class="status-badge status-pending ms-2">En attente</span>
+          <p class="mt-2"><strong>Type:</strong> Congés payés<br>
+          <strong>Du:</strong> 15 Jan 2025<br>
+          <strong>Au:</strong> 22 Jan 2025<br>
+          <strong>Durée:</strong> 5 jours</p>
+          <div class="d-flex gap-2">
+            <button class="btn btn-approve btn-sm w-50">Approuver</button>
+            <button class="btn btn-refuse btn-sm w-50">Refuser</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card p-3">
+          <h6 class="fw-bold">Pierre Martin</h6>
+          <small class="text-muted">Designer</small>
+          <span class="status-badge status-pending ms-2">En attente</span>
+          <p class="mt-2"><strong>Type:</strong> Congé maladie<br>
+          <strong>Du:</strong> 20 Jan 2025<br>
+          <strong>Au:</strong> 21 Jan 2025<br>
+          <strong>Durée:</strong> 2 jours</p>
+          <div class="d-flex gap-2">
+            <button class="btn btn-approve btn-sm w-50">Approuver</button>
+            <button class="btn btn-refuse btn-sm w-50">Refuser</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card p-3">
+          <h6 class="fw-bold">Sophie Laurent</h6>
+          <small class="text-muted">Chef de projet</small>
+          <span class="status-badge status-approved ms-2">Approuvé</span>
+          <p class="mt-2"><strong>Type:</strong> Congés payés<br>
+          <strong>Du:</strong> 25 Jan 2025<br>
+          <strong>Au:</strong> 05 Fév 2025<br>
+          <strong>Durée:</strong> 8 jours</p>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-success btn-sm w-100">Voir</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card p-3">
+          <h6 class="fw-bold">Thomas Petit</h6>
+          <small class="text-muted">Analyste</small>
+          <span class="status-badge status-pending ms-2">En attente</span>
+          <p class="mt-2"><strong>Type:</strong> RTT<br>
+          <strong>Du:</strong> 28 Jan 2025<br>
+          <strong>Au:</strong> 28 Jan 2025<br>
+          <strong>Durée:</strong> 1 jour</p>
+          <div class="d-flex gap-2">
+            <button class="btn btn-approve btn-sm w-50">Approuver</button>
+            <button class="btn btn-refuse btn-sm w-50">Refuser</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <nav class="d-flex justify-content-end mt-4">
+      <ul class="pagination">
+        <li class="page-item disabled"><a class="page-link">Précédent</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h6>Contact RH</h6>
+          <p>rh@entreprise.com<br>+33 1 23 45 67 89<br>Lun-Ven : 9h-17h</p>
+        </div>
+        <div class="col-md-3">
+          <h6>Adresse</h6>
+          <p>123 Rue de la Paix<br>75001 Paris, France</p>
+        </div>
+        <div class="col-md-3">
+          <h6>Liens utiles</h6>
+          <p>Politique de congés<br>Guide employé<br>Support technique</p>
+        </div>
+        <div class="col-md-3">
+          <h6>Assistance</h6>
+          <p>Centre d’aide<br>FAQ<br>Signaler un problème</p>
+        </div>
+      </div>
+      <div class="text-center text-muted mt-3">
+        © 2025 Entreprise. Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+</html>
